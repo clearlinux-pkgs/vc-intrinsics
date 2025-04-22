@@ -7,7 +7,7 @@
 #
 Name     : vc-intrinsics
 Version  : 0.22.1
-Release  : 1
+Release  : 2
 URL      : https://github.com/intel/vc-intrinsics/archive/v0.22.1/vc-intrinsics-0.22.1.tar.gz
 Source0  : https://github.com/intel/vc-intrinsics/archive/v0.22.1/vc-intrinsics-0.22.1.tar.gz
 Summary  : No detailed summary available
