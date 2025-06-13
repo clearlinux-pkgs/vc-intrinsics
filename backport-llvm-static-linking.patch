@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e79b255..34ba397 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,6 +34,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+   )
+   include(AddLLVM)
+   include(HandleLLVMOptions)
++  set(LLVM_LINK_LLVM_DYLIB OFF)
+
+   if (LLVM_PACKAGE_VERSION GREATER_EQUAL 14)
+     set(CMAKE_CXX_STANDARD 17)
