@@ -1,3 +1,5 @@
 # Build the static library so llvm/DPC++ compiler can link it
 -DBUILD_SHARED_LIBS=OFF
 -DLLVM_DIR=/usr/lib64
+-DLLVM_ENABLE_RTTI:BOOL=ON
+-DLLVM_REQUIRES_RTTI:BOOL=ON

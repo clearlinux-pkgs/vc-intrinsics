@@ -8,7 +8,7 @@
 %define keepstatic 1
 Name     : vc-intrinsics
 Version  : 0.22.1
-Release  : 4
+Release  : 5
 URL      : https://github.com/intel/vc-intrinsics/archive/v0.22.1/vc-intrinsics-0.22.1.tar.gz
 Source0  : https://github.com/intel/vc-intrinsics/archive/v0.22.1/vc-intrinsics-0.22.1.tar.gz
 Summary  : No detailed summary available
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1749834668
+export SOURCE_DATE_EPOCH=1749847629
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,7 +87,9 @@ ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export GOAMD64=v2
 %cmake .. -DBUILD_SHARED_LIBS=OFF \
--DLLVM_DIR=/usr/lib64  -G 'Unix Makefiles'
+-DLLVM_DIR=/usr/lib64 \
+-DLLVM_ENABLE_RTTI:BOOL=ON \
+-DLLVM_REQUIRES_RTTI:BOOL=ON  -G 'Unix Makefiles'
 make  %{?_smp_mflags}
 popd
 
@@ -106,7 +108,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1749834668
+export SOURCE_DATE_EPOCH=1749847629
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vc-intrinsics
 cp %{_builddir}/vc-intrinsics-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/vc-intrinsics/723eea2469244a92b3e3461b79c3e848ce058cc6 || :
